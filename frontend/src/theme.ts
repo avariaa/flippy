@@ -25,7 +25,7 @@ const theme = createTheme({
     },
 
     typography: {
-        fontFamily: 'Iner, Arial, sans-serif',
+        fontFamily: 'Inter, Arial, sans-serif',
 
         h1: {
             fontWeight: 900,
