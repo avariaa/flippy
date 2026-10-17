@@ -1,6 +1,9 @@
 from fastapi import FastAPI
+from app.routers.materials import router as materials_router
+
 
 app = FastAPI(title="Flippy API")
+app.include_router(materials_router)
 
 
 @app.get("/")

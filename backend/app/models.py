@@ -32,6 +32,4 @@ class Card(Base):
         index=True,
     )
 
-    material: Mapped[Material] = relationship(
-        back_populates="cards",
-    )
+    material: Mapped[Material] = relationship(back_populates="cards")
