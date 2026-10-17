@@ -21,3 +21,21 @@ class MaterialRead(MaterialCreate):
 class MaterialUpdate(MaterialCreate):
     subtitle: str = Field(max_length=300)
     color: str = Field(pattern=r"^#[0-9A-Fa-f]{6}$")
+
+
+class CardCreate(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    question: str = Field(min_length=1)
+    answer: str = Field(min_length=1)
+
+
+class CardRead(CardCreate):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    material_id: int
+
+
+class CardUpdate(CardCreate):
+    pass
